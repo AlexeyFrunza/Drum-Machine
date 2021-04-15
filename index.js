@@ -1,6 +1,6 @@
 
 
-const audioClips = [
+  const audioClips = [
     {
         keyCode:81,
         keyTrigger: 'Q',
@@ -62,18 +62,22 @@ const audioClips = [
         url: './sounds/snare-2.wav'
       }
 ]
-function App(){
+  function App(){
+      const [volume , setVolume] = React.useState(1);
     return (
        <div className="wrapper">
-           <h2>L O - F I</h2>
            {audioClips.map((clip) => 
-            <Pad clip={clip} key={clip.id}/>
+            <Pad clip={clip} key={clip.id} volume={volume}/>
             )}
+        <h2 className="text">Volume</h2>
+        <input type="range" step="0.01" value={volume} max="1" min="0" onChange={(e) => setVolume(e.target.value)} className="volInput"/>
        </div>
     )  
 }
 
-function Pad({clip}) {
+  function Pad({clip,volume}) {
+    
+    const [active, setActive] = React.useState(false)
 
   React.useEffect(() => {
       document.addEventListener('keydown',handleKeyPress) 
@@ -81,7 +85,6 @@ function Pad({clip}) {
           document.removeEventListener('keydown',handleKeyPress)
       })
   })
-
   const handleKeyPress = (e) => {
    if(e.keyCode == clip.keyCode) {
        playSound();
@@ -92,10 +95,15 @@ function Pad({clip}) {
   const audioTag = document.getElementById(clip.keyTrigger);
   audioTag.currentTime = 0;
   audioTag.play();
+  audioTag.volume = volume;
+  setActive(true);
+  setTimeout(() => {
+   setActive(false);
+  },500)
     }
 
   return(
-      <div className="button" onClick={playSound}>
+      <div className={`button ${active && "btn-clicked"}`} onClick={playSound}>
           <audio id={clip.keyTrigger} src={clip.url}/>
           {clip.keyTrigger}
       </div>

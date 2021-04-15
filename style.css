@@ -8,26 +8,73 @@
     --primary: hsl(200, 4%, 14%, 0.65);
     --secondary: hsl(210, 3%, 26%, 0.65);
 }
+.box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 85vh;
+}
 body {
     height: 100vh;
-    width: 100vh;
     background: linear-gradient(to right,var(--primary),var(--secondary)),
-                url(https://pbs.twimg.com/media/Eh-V2TQWoAIYhzv.jpg:large) no-repeat center center / cover;
+                url(https://i.gifer.com/embedded/download/ICvv.gif) no-repeat center center / cover;
     place-items: center;
     place-content: center;
     font-family: 'Raleway', sans-serif;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
 }
 .wrapper {
     width: 500px;
-    height: 400px;
     border: 3px solid #fff;
     text-align: center;
+    padding: 20px;
+    backdrop-filter: blur(7px);
 }
-#root {
-    display: flex;
-  justify-content: center;
-  align-items: center;
+.wrapper:hover {
+    box-shadow: 1px 1px 7px 3px white;
+    transition-duration: 0.5s;
+}
+.button {
+    width: 120px;
+    height: 120px;
+    font-size: 90px;
+    color: white;
+    border-radius: 1px;
+    margin: 0;
+    display: inline-block;
+}
+.header {
+    text-align: center;
+    color: white;
+}
+.header:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+.btn-clicked {
+    width: 120px;
+    height: 120px;
+    font-size: 90px;
+    color: white;
+    border-radius: 1px;
+    margin: 0;
+    display: inline-block;
+    background-color: rgba(150, 111, 111, 0.171);
+    transition-duration: 0.3s;
+
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.text {
+   color: white; 
+   margin: 15px;
+}
+.volInput {
+    width: 300px;
 }
