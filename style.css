@@ -28,7 +28,8 @@ body {
     flex-direction: column;
 }
 .wrapper {
-    width: 500px;
+    max-width: 500px;
+    max-height: 600px;
     border: 3px solid #fff;
     text-align: center;
     padding: 20px;
@@ -77,4 +78,61 @@ a {
 }
 .volInput {
     width: 300px;
+}
+@media (max-width:1000px) {
+    .wrapper {
+        max-width: 400px;
+        max-height: 400px;
+    }
+    .button {
+    width: 100px;
+    height: 70px;
+    font-size: 60px;
+    }
+    .btn-clicked {
+    width: 100px;
+    height: 70px;
+    font-size: 60px;
+    }
+    .volInput {
+        width: 200px;
+    }
+}
+@media (max-width:500px) {
+    .wrapper {
+        max-width: 300px;
+        max-height: 400px;
+    }
+    .button {
+    width: 70px;
+    height: 70px;
+    font-size: 60px;
+    }
+    .btn-clicked {
+    width: 70px;
+    height: 70px;
+    font-size: 60px;
+    }
+    .volInput {
+        width: 200px;
+    }
+}
+@media (max-width:350px) {
+    .wrapper {
+        max-width: 250px;
+        max-height: 400px;
+    }
+    .button {
+    width: 60px;
+    height: 70px;
+    font-size: 50px;
+    }
+    .btn-clicked {
+    width: 60px;
+    height: 70px;
+    font-size: 60px;
+    }
+    .volInput {
+        width: 200px;
+    }
 }
