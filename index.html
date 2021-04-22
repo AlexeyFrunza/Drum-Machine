@@ -17,11 +17,34 @@
         <div class="header">
             <a href="#">
                 <h1>L O - F I</h1>
-                <h2>Dr-Machine</h2>
+                <h2>Drum-Machine</h2>
             </a>
         </div>
-        <div id="root"></div>
+        <div id="root">
+            <div class="wrapper">
+                <div data-key="81" class="button">Q</div>
+                <div data-key="87" class="button">W</div>
+                <div data-key="69" class="button">E</div>
+                <div data-key="65" class="button">A</div>
+                <div data-key="83" class="button">S</div>
+                <div data-key="68" class="button">D</div>
+                <div data-key="90" class="button">Z</div>
+                <div data-key="88" class="button">X</div>
+                <div data-key="67" class="button">C</div>
+                <h2 class="text">Volume</h2>
+                <input type="range" step="0.01" max="1" min="0" class="volInput" id="volume-slider"/>
+            </div>
+        </div>
     </div>
+    <audio data-key="81" src="./sounds/chord-1.mp3"></audio>
+    <audio data-key="87" src="./sounds/chord-2.mp3"></audio>
+    <audio data-key="69" src="./sounds/chord-3.mp3"></audio>
+    <audio data-key="65" src="./sounds/chord-4.mp3"></audio>
+    <audio data-key="83" src="./sounds/hihat-1.wav"></audio>
+    <audio data-key="68" src="./sounds/hihat-2.wav"></audio>
+    <audio data-key="90" src="./sounds/kick-1.wav"></audio>
+    <audio data-key="88" src="./sounds/snare-1.wav"></audio>
+    <audio data-key="67" src="./sounds/snare-2.wav"></audio>
     <script type="text/babel" src="./index.js"></script>
 </body>
 </html>
